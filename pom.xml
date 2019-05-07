@@ -42,6 +42,16 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-maven-plugin</artifactId>
     </plugin>
+   <plugin>
+        <groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
+        <artifactId>sonar-packaging-maven-plugin</artifactId>
+        <version>1.18.0.372</version>
+        <extensions>true</extensions>
+        <configuration>
+          <pluginKey>example</pluginKey>
+          <pluginClass>org.sonarsource.plugins.example.ExamplePlugin</pluginClass>
+        </configuration>
+      </plugin>
     </plugins>
    </build>
 
@@ -57,6 +67,11 @@
 	    <groupId>org.springframework.boot</groupId>
 	    <artifactId>spring-boot-starter-web</artifactId>
 	</dependency>
-    
+    	<dependency>
+      	 <groupId>org.sonarsource.sonarqube</groupId>
+        <artifactId>sonar-plugin-api</artifactId>
+       <version>${sonar.apiVersion}</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 </project>
